@@ -1,7 +1,14 @@
 package Problem3;
 
-public interface State {
+public abstract class State {
 
-    public void collect(int amount);
-    public void refill(int count);
+    protected VendingMachine vm;
+
+    public abstract void changeState();
+    public abstract void collect(int amount);
+    public abstract void refill();
+    public abstract void returnChange();
+
+
+    public abstract void run();
 }
