@@ -21,6 +21,7 @@ public class RefillingState extends State {
     }
 
     public void run() {
-
+        refill();
+        vm.setState(new IdleState(vm));
     }
 }

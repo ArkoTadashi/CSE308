@@ -1,5 +1,9 @@
 package Problem3;
 
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class IdleState extends State {
 
 
@@ -28,6 +32,20 @@ public class IdleState extends State {
     }
 
     public void run() {
-        changeState();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String read;
+
+        System.out.println("Would you like to buy our product?");
+
+        try {
+            read = br.readLine();
+            if (read.equalsIgnoreCase("YES")) {
+                changeState();
+            }
+        } catch (IOException e) {
+            // BRUV
+        }
+        
+
     }
 }

@@ -20,13 +20,17 @@ public class ItemState extends State {
     }
 
     public void returnChange() {
-        System.out.println("Here is your " + returnAmount + " change");
+        System.out.println("Here is your " + returnAmount + "$ change");
     }
 
     public void run() {
+        System.out.println();
+        if (returnAmount != 0) {
+            returnChange();
+        }
         System.out.println("Here is your item");
         vm.sold();
-        System.out.println("Thank you for buying it from us!");
+        System.out.println("Thank you for buying it from us!\n");
         changeState();
     }
 }
