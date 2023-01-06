@@ -6,8 +6,12 @@ import java.io.InputStreamReader;
 
 public class IdleState extends State {
 
+    BufferedReader br;
+    String read;
+
 
     public IdleState(VendingMachine vm) {
+        br = new BufferedReader(new InputStreamReader(System.in));
         this.vm = vm;
     }
 
@@ -32,8 +36,7 @@ public class IdleState extends State {
     }
 
     public void run() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String read;
+        
 
         System.out.println("Would you like to buy our product?");
 
