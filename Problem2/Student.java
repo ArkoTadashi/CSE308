@@ -6,14 +6,13 @@ public class Student extends Person {
     private int marks;
     private boolean rechecked;
 
-    public Student() {
+    public Student(ExamController examController, int ID) {
+        super(examController);
+        this.ID = ID;
+        marks = 0;
         rechecked = false;
     }
 
-    @Override
-    public void send() {
-
-    }
 
     public void setID(int ID) {
         this.ID = ID;
@@ -35,4 +34,11 @@ public class Student extends Person {
     public boolean isRechecked() {
         return rechecked;
     }
+
+    @Override
+    public void send(int ID) {
+        examController.send(this, ID, marks);
+    }
+
+
 }
