@@ -1,6 +1,7 @@
 package Problem1;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class PremiumUser extends User {
@@ -8,12 +9,16 @@ public class PremiumUser extends User {
     private BufferedReader br;
 
     public PremiumUser(ABCServer abcServer) {
-        this.abcServer = abcServer;
+        super(abcServer);
+        premium = true;
+        bothServer = false;
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
     @Override
-    public void notify(State prevState, State currState) {
+    public void notifyUser() throws IOException{
+        prevState = abcServer.getPrevState();
+        currState = abcServer.getCurrState();
         if (prevState == State.OPERATIONAL && currState == State.PARTIALLY_DOWN) {
 
         }

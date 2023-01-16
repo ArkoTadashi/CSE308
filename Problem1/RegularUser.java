@@ -9,23 +9,22 @@ public class RegularUser extends User {
     private BufferedReader br;
 
     public RegularUser(ABCServer abcServer) {
-        this.abcServer = abcServer;
+        super(abcServer);
+        premium = false;
+        bothServer = true;
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
     @Override
-    public void notify(State prevState, State currState) {
+    public void notifyUser() throws IOException {
+
+        prevState = abcServer.getPrevState();
+        currState = abcServer.getCurrState();
+
         if (prevState == State.OPERATIONAL && currState == State.PARTIALLY_DOWN) {
             System.out.println("Using limited functionality");
             System.out.println("Pay 20$ to use premium service? Type Yes or No.");
-            try {
-                String read = br.readLine();
-                if (read.equalsIgnoreCase("YES")) {
-
-                }
-            } catch (IOException e) {
-
-            }
+            
 
         }
         else if (prevState == State.OPERATIONAL && currState == State.FULLY_DOWN) {
