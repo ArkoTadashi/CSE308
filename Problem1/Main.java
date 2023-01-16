@@ -16,7 +16,9 @@ public class Main {
         abcServer.addUser(premiumUser);
 
         while (true) {
-            System.out.println("The server is currently " + abcServer.getCurrState());
+
+            System.out.println("\n\t SERVER");
+            System.out.println("The server is currently " + abcServer.getCurrState() + " state");
 
             System.out.println("Change the server state\nType 1/2/3 to change");
             System.out.println("1. OPERATIONAL\n2. PARTIALLY DOWN\n3. FULLY DOWN");
@@ -48,6 +50,8 @@ public class Main {
                     abcServer.setState(State.FULLY_DOWN);
                 }
             }
+
+            System.out.println("\n\t __SERVER__");
         }
 
     }

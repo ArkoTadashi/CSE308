@@ -6,9 +6,6 @@ public abstract class User {
 
     protected ABCServer abcServer;
 
-    protected boolean premium;
-    protected boolean bothServer;
-
     protected State prevState;
     protected State currState;
 

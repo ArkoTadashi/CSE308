@@ -30,6 +30,7 @@ public class ABCServer{
     }
 
     public void setState(State currState) throws IOException {
+        this.prevState = this.currState;
         this.currState = currState;
         notifyUsers();
     }
